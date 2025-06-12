@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Login Screen -->
+    <div id="login-screen">
+      <h1>Welcome to Quiz Game!</h1>
+      <input type="text" id="username" placeholder="Enter your name" />
+      <button onclick="loginUser()">Login</button>
+    </div>
+
+    <!-- Category Selection -->
+    <div id="start-screen" class="hide">
+      <h2>Hello, <span id="user-display"></span> 👋</h2>
+      <label for="category">Choose a category:</label>
+      <select id="category">
+        <option value="general">General Knowledge</option>
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+      </select>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Container -->
+    <div id="quiz-container" class="hide">
+      <div id="timer">Time Left: <span id="time">15</span>s</div>
+      <div id="question-container">
+        <div id="question">Question text</div>
+        <div id="answer-buttons" class="btn-grid"></div>
+      </div>
+      <button id="next-btn" class="next-btn" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="hide">
+      <h2>Well done, <span id="user-result"></span> 🎉</h2>
+      <h3>Your Score: <span id="score"></span></h3>
+      <h3>Review Your Answers:</h3>
+      <ul id="review-list"></ul>
+      <button onclick="restart()">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
